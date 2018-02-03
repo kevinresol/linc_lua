@@ -13,6 +13,8 @@ extern class Api {
     
     @:native('LUA_OK')
     static var OK:Int;
+    @:native('LUA_REGISTRYINDEX')
+    static var REGISTRYINDEX:Int;
     
     @:native('LUA_TNIL')
     static var TNIL:Int;
@@ -57,6 +59,12 @@ extern class Api {
     static function luaL_newstate():State;
     @:native('lua_close')
     static function lua_close(l:State):Void;
+    
+    @:native('luaL_ref')
+    static function luaL_ref(l:State, i:Int):Int;
+    @:native('lua_rawgeti')
+    static function lua_rawgeti(l:State, i:Int, n:Int):Int;
+    
     
     @:native('linc::luaL::requiref')
     static function luaL_requiref(l:State, name:String, openf:cpp.Callable<State->Int>, global:Bool):Int;
@@ -117,5 +125,7 @@ extern class Api {
     static function lua_toboolean(l:State, i:Int):Bool;
     @:native('linc::lua::tostring')
     static function lua_tostring(l:State, i:Int):String;
+    @:native('lua_tocfunction')
+    static function lua_tocfunction(l:State, i:Int):cpp.Callable<State->Int>;
 
 } //Lua
