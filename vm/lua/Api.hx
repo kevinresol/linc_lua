@@ -36,6 +36,8 @@ extern class Api {
     
     @:native('luaL_newstate')
     static function luaL_newstate():State;
+    @:native('lua_close')
+    static function lua_close(l:State):Void;
     
     @:native('linc::luaL::requiref')
     static function luaL_requiref(l:State, name:String, openf:cpp.Callable<State->Int>, global:Bool):Int;
