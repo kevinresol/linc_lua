@@ -1,0 +1,14 @@
+{
+	"name": "linc_lua",
+	"license": "MIT",
+	"tags": [
+	  "linc",
+	  "lua"
+	],
+	"contributors": [
+	  "kevinresol"
+	],
+	"releasenote": "initial release",
+	"version": "0.0.0",
+	"dependencies": {}
+  }
