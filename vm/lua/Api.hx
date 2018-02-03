@@ -66,6 +66,8 @@ extern class Api {
     static function lua_rawgeti(l:State, i:Int, n:Int):Int;
     
     
+    @:native('luaL_openlibs')
+    static function luaL_openlibs(l:State):Void;
     @:native('linc::luaL::requiref')
     static function luaL_requiref(l:State, name:String, openf:cpp.Callable<State->Int>, global:Bool):Int;
     @:native('luaL_dostring')
