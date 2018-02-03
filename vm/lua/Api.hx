@@ -33,6 +33,25 @@ extern class Api {
     @:native('LUA_TLIGHTUSERDATA')
     static var TLIGHTUSERDATA:Int;
     
+    @:native('luaopen_base')
+    static var luaopen_base:Dynamic;
+    @:native('luaopen_debug')
+    static var luaopen_debug:Dynamic;
+    @:native('luaopen_io')
+    static var luaopen_io:Dynamic;
+    @:native('luaopen_math')
+    static var luaopen_math:Dynamic;
+    @:native('luaopen_os')
+    static var luaopen_os:Dynamic;
+    @:native('luaopen_package')
+    static var luaopen_package:Dynamic;
+    @:native('luaopen_string')
+    static var luaopen_string:Dynamic;
+    @:native('luaopen_table')
+    static var luaopen_table:Dynamic;
+    @:native('luaopen_coroutine')
+    static var luaopen_coroutine:Dynamic;
+    
     
     @:native('luaL_newstate')
     static function luaL_newstate():State;
