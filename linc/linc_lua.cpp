@@ -2,6 +2,7 @@
 #include <hxcpp.h>
 #include <hx/CFFI.h>
 #include "./linc_lua.h"
+#include <functional>
 
 namespace linc {
 
@@ -25,8 +26,12 @@ namespace linc {
             return ::String(lua_typename(l, i));
         }
         
+        ::cpp::Function<int(::cpp::Pointer<lua_State>)> tocfunction(lua_State* l, int i) {
+            return (::cpp::Function<int(::cpp::Pointer<lua_State>)>)tocfunction(l, i);
+        }
+        
         void pushcclosure(lua_State* l, ::cpp::Function<int(lua_State*)> fn, int n) {
-            lua_pushcclosure(l, (lua_CFunction)fn, n);
+            lua_pushcclosure(l, (lua_CFunction) fn, n);
         }
         
 

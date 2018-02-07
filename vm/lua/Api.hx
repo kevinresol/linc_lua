@@ -1,5 +1,7 @@
 package vm.lua;
 
+import vm.lua.State;
+
 @:keep
 @:include('linc_lua.h')
 #if !display
@@ -87,6 +89,8 @@ extern class Api {
     static function lua_pop(l:State, i:Int):Void;
     @:native('lua_upvalueindex')
     static function lua_upvalueindex(i:Int):Int;
+    @:native('lua_xmove')
+    static function lua_xmove(from:State, to:State, n:Int):Void;
     
     
     @:native('lua_getglobal')
@@ -111,7 +115,9 @@ extern class Api {
     @:native('lua_pushlightuserdata')
     static function lua_pushlightuserdata(l:State, v:cpp.Pointer<Void>):Void;
     @:native('linc::lua::pushcclosure')
-    static function lua_pushcclosure(l:State, v:cpp.Callable<State->Int>, n:Int):Void;
+    static function lua_pushcclosure(l:State, v:cpp.Callable<StateStar->Int>, n:Int):Void;
+    @:native('lua_pushthread')
+    static function lua_pushthread(l:State):Int;
     
     
     @:native('linc::lua::_typename')
@@ -127,7 +133,9 @@ extern class Api {
     static function lua_toboolean(l:State, i:Int):Bool;
     @:native('linc::lua::tostring')
     static function lua_tostring(l:State, i:Int):String;
-    @:native('lua_tocfunction')
+    @:native('linc::lua::tocfunction')
     static function lua_tocfunction(l:State, i:Int):cpp.Callable<State->Int>;
+    @:native('lua_tothread')
+    static function lua_tothread(l:State, i:Int):State;
 
 } //Lua

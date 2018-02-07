@@ -3,4 +3,5 @@ package vm.lua;
 @:native('lua_State')
 extern private class LuaState {}
 
-typedef State = cpp.Star<LuaState>;
+typedef StateStar = cpp.RawPointer<LuaState>;
+typedef State = cpp.Pointer<LuaState>;
