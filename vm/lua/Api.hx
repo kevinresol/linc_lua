@@ -104,6 +104,8 @@ extern class Api {
     @:native('lua_settable')
     static function lua_settable(l:State, i:Int):Void;
     
+    @:native('lua_pushvalue')
+    static function lua_pushvalue(from:State, i:Int):Void;
     @:native('lua_pushnil')
     static function lua_pushnil(l:State):Void;
     @:native('lua_pushnumber')
