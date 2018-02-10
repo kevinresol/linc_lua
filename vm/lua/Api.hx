@@ -136,7 +136,7 @@ extern class Api {
     @:native('linc::lua::tostring')
     static function lua_tostring(l:State, i:Int):String;
     @:native('linc::lua::tocfunction')
-    static function lua_tocfunction(l:State, i:Int):cpp.Callable<State->Int>;
+    static function lua_tocfunction(l:State, i:Int):cpp.Callable<StateStar->Int>;
     @:native('lua_tothread')
     static function lua_tothread(l:State, i:Int):State;
 

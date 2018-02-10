@@ -20,7 +20,7 @@ namespace linc {
         extern bool toboolean(lua_State* l, int i);
         extern ::String tostring(lua_State* l, int i);
         extern ::String _typename(lua_State* l, int i);
-        extern ::cpp::Function<int(::cpp::Pointer<lua_State>)> tocfunction(lua_State* l, int i);
+        extern ::cpp::Function<int(lua_State*)> tocfunction(lua_State* l, int i);
         extern void pushcclosure(lua_State* l, ::cpp::Function<int(lua_State*)> fn, int n);
 
     } //lua namespace
