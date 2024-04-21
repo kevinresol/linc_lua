@@ -1,7 +1,9 @@
 #pragma once
 
-//hxcpp include should always be first    
+//hxcpp include should always be first
+#ifndef HXCPP_H
 #include <hxcpp.h>
+#endif
 #include <hx/CFFI.h>
 
 //include other library includes as needed
