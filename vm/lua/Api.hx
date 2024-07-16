@@ -10,7 +10,7 @@ import vm.lua.State;
 #end
 extern class Api {
     
-    @:native('::String(LUA_VERSION, 7)') // it is const char[8], null-terminated
+    @:native('::String(LUA_VERSION)') // it is const char[8], null-terminated
     static var VERSION:String;
     
     @:native('LUA_OK')
