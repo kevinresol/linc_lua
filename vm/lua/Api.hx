@@ -1,6 +1,7 @@
 package vm.lua;
 
 import vm.lua.State;
+import cpp.Int64;
 
 @:keep
 @:include('linc_lua.h')
@@ -110,6 +111,8 @@ extern class Api {
     static function lua_pushnil(l:State):Void;
     @:native('lua_pushnumber')
     static function lua_pushnumber(l:State, v:Float):Void;
+    @:native('lua_pushinteger')
+    static function lua_pushinteger(l:State, v:Int64):Void;
     @:native('lua_pushboolean')
     static function lua_pushboolean(l:State, v:Bool):Void;
     @:native('lua_pushstring')
