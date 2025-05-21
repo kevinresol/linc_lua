@@ -134,6 +134,8 @@ extern class Api {
     static function lua_topointer(l:State, i:Int):cpp.Pointer<Void>;
     @:native('lua_tonumber')
     static function lua_tonumber(l:State, i:Int):Float;
+    @:native('lua_tointeger')
+    static function lua_tointeger(l:State, i:Int):Int;
     @:native('linc::lua::toboolean')
     static function lua_toboolean(l:State, i:Int):Bool;
     @:native('linc::lua::tostring')
@@ -142,5 +144,8 @@ extern class Api {
     static function lua_tocfunction(l:State, i:Int):cpp.Callable<StateStar->Int>;
     @:native('lua_tothread')
     static function lua_tothread(l:State, i:Int):State;
-
+	
+	@:native('lua_isinteger')
+    static function lua_isinteger(l:State, i:Int):Bool;
+    
 } //Lua
